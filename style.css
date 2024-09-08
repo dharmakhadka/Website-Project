@@ -1,0 +1,283 @@
+/* Merged top bar and header section */
+#top-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Container for the top header elements */
+.top-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 0.9rem;
+}
+
+/* Logo style */
+.logo-container {
+    margin-left: 50px;
+    flex: 0 0 auto; /* Prevent from growing */
+}
+
+.small-logo {
+    width: 150px; /* Adjust size as needed */
+    height: 90px;
+}
+
+/* Navigation links */
+nav {
+    flex: 1; /* Allow navigation to take available space */
+    text-align: center; /* Center align navigation links */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center align links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 20px; /* Adjust spacing as needed */
+    font-size: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f4f4f4;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.social-media {
+    flex: 0 0 auto; /* Prevent from growing */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-media a img {
+    width: 32px; /* Adjust the width for larger icons */
+    height: 32px; /* Adjust the height for larger icons */
+    border-radius: 50%; /* Ensures circular icons */
+    transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1); /* Slightly increase the size on hover */
+}
+
+#hero {
+    position: relative;
+    background: url("image3.jpg") no-repeat center center/cover;
+    background-attachment: fixed; /* Fixes the background image */
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 200px 0;
+    font-size: larger;
+}
+
+/* Overlay for darkening the background image */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Make sure it is above the background image but below text */
+}
+
+/* Ensure hero content is above the overlay */
+#hero h1, #hero h2 {
+    position: relative;
+    z-index: 2; /* Place text above the overlay */
+}
+
+/* Other sections remain unchanged */
+#notes {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0 10%;
+}
+
+#services {
+    padding: 100px 20px;
+    background-color: #d3d3d7;
+    text-align: center;
+}
+
+table.country-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table.country-table td {
+    text-align: center;
+    padding: 20px;
+}
+
+table.country-table img {
+    width: 400px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+table.country-table img:hover {
+    transform: scale(1.1);
+}
+
+#reviews {
+    padding: 50px 20px; /* Adjust padding to control space inside the section */
+    background-color: #f3f9fd;
+    text-align: center;
+    margin: 0 auto; /* Center the section */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Limit the maximum width */
+}
+
+#reviews h2 {
+    font-size: 28px; /* Slightly smaller font size for better fit */
+    color: #2a6597;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Adds spacing between letters for style */
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column; /* Stack reviews vertically */
+    gap: 20px; /* Space between review boxes */
+}
+
+.review {
+    background-color: #fff;
+    padding: 20px; /* Reduce padding for a more compact box */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Creates a card-like shadow */
+    width: 100%; /* Full width of the container */
+    max-width: 600px; /* Limit the maximum width for better fit */
+    margin: 0 auto; /* Center align each review box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For positioning icons and decorations */
+}
+
+.review p {
+    font-size: 16px; /* Smaller font size for compactness */
+    color: #555;
+    line-height: 1.4; /* Improved readability with reduced line height */
+    margin-bottom: 15px; /* Reduce margin below paragraph */
+}
+
+.review h3 {
+    font-size: 18px; /* Slightly smaller font size */
+    color: #2a6597;
+    font-weight: bold;
+    text-align: right; /* Aligns the author name to the right */
+}
+
+.review:hover {
+    transform: translateY(-3px); /* Smaller lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deepens shadow on hover */
+}
+
+.review::before {
+    content: "\f10d"; /* FontAwesome quotation mark icon */
+    font-family: FontAwesome;
+    font-size: 30px; /* Smaller size for a more subtle effect */
+    color: #2a6597;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    #reviews, #skill-enhancement {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+        margin: 0 10px; /* Adjust margin for smaller screens to avoid overflow */
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+#skill-enhancement {
+    padding: 50px 20px; /* Adjust padding to control space inside the section */
+    background-color: #e9f7fc;
+    text-align: center;
+    margin: 0 auto; /* Center the section */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Limit the maximum width */
+}
+
+#skill-enhancement h2 {
+    font-size: 32px;
+    color: #2a6597;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Spacing between letters for a modern look */
+}
+
+#skill-enhancement p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6; /* Improves readability */
+}
+
+ul.services-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 1000px; /* Limits the width for better readability */
+    margin: 0 auto; /* Centers the list */
+}
+
+ul.services-list li {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a shadow to each list item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for hover */
+    text-align: left; /* Align text to the left for list items */
+}
+
+ul.services-list li:hover {
+    transform: translateY(-5px); /* Lifts the item slightly on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deepens the shadow on hover */
+}
+
+ul.services-list li strong {
+    color: #2a6597;
+    font-weight: 700;
+}
