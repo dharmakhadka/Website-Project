@@ -11,14 +11,14 @@ html, body {
     height: 100%;
 }
 
-/* General Reset and Font Style */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: #333;
 }
 
-/* Reuse top bar and header section styles */
+
 #top-header {
     background-color: #333;
     color: #fff;
