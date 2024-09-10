@@ -1,0 +1,281 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 300;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+/* General Reset and Font Style */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Reuse top bar and header section styles */
+#top-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.top-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 0.9rem;
+}
+
+.logo-container {
+    margin-left: 50px;
+    flex: 0 0 auto;
+}
+
+.small-logo {
+    width: 150px;
+    height: 90px;
+}
+
+nav {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    font-size: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f4f4f4;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.social-media {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-media a img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.2);
+}
+
+/* Services Section */
+#services {
+    padding: 100px 200px;
+    background-color: #d3d3d7;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 32px;
+    color: #2a6597;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.service-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    overflow: hidden;
+    margin: 20px 0;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item-bachelors {
+    background-image: url('/image/serviceimg1.jpg');
+    display: flex;
+    color: white;
+    font-size: 150%;
+}
+
+.service-item-masters {
+    background-image: url('/image/serviceimg2.jpg');
+    display: flex;
+    color: white;
+    font-size: 150%;
+}
+
+.service-item-mock-tests {
+    background-image: url('/image/serviceimg3.jpeg');
+    display: flex;
+    color: white;
+    font-size: 150%;
+}
+
+.service-item-scholarships {
+    background-image: url('/image/serviceimg4.jpg');
+    display: flex;
+    color: white;
+    font-size: 150%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Light dark overlay */
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover .overlay {
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+    .top-header-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        font-size: 22px;
+    }
+
+    .social-media a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    #services {
+        padding: 80px 20px;
+    }
+
+    #services h2 {
+        font-size: 28px;
+    }
+
+    .service-item {
+        height: 250px;
+        font-size: 120%;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .top-header-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .social-media a img {
+        width: 24px;
+        height: 24px;
+    }
+
+    #services {
+        padding: 50px 10px;
+    }
+
+    #services h2 {
+        font-size: 24px;
+    }
+
+    .service-item {
+        height: 200px;
+        font-size: 100%;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
