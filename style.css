@@ -11,10 +11,35 @@ html, body {
 }
 
 #top-header {
-    background-color: #333;
-    color: #fff;
+    background-color: transparent; /* Make background transparent */
+    color: #fff; /* Change text color for better contrast (adjust as necessary) */
     padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Optional: Add a blur effect for better readability */
 }
+
+
+
+body {
+    padding-top: 80px; /* Add padding to the top to prevent content from hiding behind the fixed header */
+}
+
+
+.nav-links li a {
+    color: #333; /* Update text color to dark */
+    font-family: "Oswald", Sans-serif;
+}
+
+.nav-links li a:hover {
+    color: #2a6597; /* Add a blue hover effect */
+    background-color: #6383f9;
+    border-radius: 5px;
+}
+
 
 
 .top-header-container {
@@ -55,7 +80,7 @@ nav {
 }
 
 .nav-links li a {
-    color: white;
+    color: rgb(11, 7, 7);
     text-decoration: none;
     padding: 10px;
     transition: all 0.3s ease;
@@ -91,7 +116,8 @@ nav {
     background-attachment: fixed;
     color: #fff;
     text-align: center;
-    padding: 200px 0;
+    padding: 300px 0; /* Increased padding for more height */
+    min-height: 20vh; /* Ensures it takes at least full viewport height */
     font-size: larger;
 }
 
@@ -106,18 +132,70 @@ nav {
     z-index: 1;
 }
 
-#hero h1, #hero h2 {
+
+#hero h1 {
+    font-size: 20px;
+    color: #f6f6f6;
+    margin-bottom: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
     position: relative;
     z-index: 2;
 }
 
+#hero h2 {
+    font-size: 40px;
+    color: #f6f6f6;
+    margin-bottom: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
 /* Notes section */
+
+#notes h1:first-child {
+    font-size: 32px;
+    color: #2a6597;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
 #notes {
-    padding: 50px;
+    padding: 70px;
+    font-size: 90%;
     text-align: center;
     background-color: #f9f9f9;
     color: #333;
     margin: 0 10%;
+}
+
+#icons-section {
+    display: flex;
+    justify-content: center;
+    gap: 0%; /* Spacing between icons */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.icon-item {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+.icon-item img {
+    width: 80px; /* Adjust the size of the icons */
+    height: 80px;
+    object-fit: contain;
+}
+
+.icon-item h3 {
+    font-size: 18px;
+    color: #2a6597;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
 }
 
 #services {
@@ -150,10 +228,66 @@ table.country-table img:hover {
     transform: scale(1.1);
 }
 
+#services h2{
+    font-size: 23px;
+    color: #0065be;
+    margin-bottom: 20px;
+    font-weight: 200;
+    text-transform: uppercase;
+
+}
+
+#trusted-students {
+    width: 100%;
+    height: 30vh; /* 20% of viewport height */
+    background-color: #2a6597; /* Suitable background color */
+    color: white; /* Bold text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#trusted-students h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#student-services {
+    padding: 70px 20px;
+    background-color: #f9f9f9; /* or any color you prefer */
+    text-align: center;
+}
+
+#student-services h2 {
+    font-size: 28px;
+    color: #2a6597;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#student-services p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+#icons-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* adjust spacing as needed */
+}
 
 #reviews {
     padding: 50px 20px;
-    background-color: #f3f9fd;
+    background-color: #bfd5f5;
     text-align: center;
     margin: 0 auto;
     border-radius: 15px;
@@ -163,7 +297,7 @@ table.country-table img:hover {
 
 #reviews h2 {
     font-size: 28px;
-    color: #2a6597;
+    color: #0065be;
     margin-bottom: 20px;
     font-weight: 700;
     text-transform: uppercase;
@@ -204,7 +338,7 @@ table.country-table img:hover {
 
 #skill-enhancement {
     padding: 50px 20px;
-    background-color: #e9f7fc;
+    background-color: #bfd5f5;
     text-align: center;
     margin: 0 auto;
     border-radius: 15px;
@@ -256,6 +390,67 @@ ul.services-list li strong {
     color: #2a6597;
     font-weight: 700;
 }
+
+#contact-info {
+    background-color: #2a6597; /* Background color */
+    color: #fff; /* White text for contrast */
+    padding: 40px 20px;
+}
+
+.contact-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    flex: 1;
+    margin: 10px 20px;
+}
+
+#contact-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#contact-info p {
+    font-size: 18px;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media-links a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.social-media-links a img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .contact-info-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .contact-item {
+        margin: 20px 0;
+    }
+}
+
 
 /* Footer */
 footer {
@@ -450,3 +645,5 @@ table.country-table img:hover {
         pointer-events: none; /* Disable clicks on desktop */
     }
 }
+
+
