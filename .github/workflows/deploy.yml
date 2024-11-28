@@ -1,1 +1,46 @@
+name: CI/CD Pipeline for Website
+
+on:
+  push:
+    branches:
+      - main  # Run pipeline on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Validate pull requests to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Validate HTML, CSS, and JS
+    - name: Run linters and validators
+      run: |
+        echo "Validating HTML..."
+        tidy -q -e index.html || true
+        echo "Validating CSS..."
+        stylelint "**/*.css" || true
+        echo "Validating JS..."
+        npx eslint . || true
+
+    # Step 3: Build (Optional, for static site generators or minification)
+    - name: Build website (if needed)
+      run: |
+        echo "Building website..."
+        # Add build commands here, if applicable
+        # Example for Jekyll or Hugo:
+        # jekyll build or hugo
+
+    # Step 4: Deploy to a hosting platform
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v3
+      with:
+        publish-dir: ./  # Directory to deploy
+        production-deploy: true
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Set in GitHub Secrets
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}        # Set in GitHub Secrets
 
